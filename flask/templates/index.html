@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EchoEyes - Image Captioning</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <script
+      src="{{ url_for('static', filename='js/scripts.js') }}"
+      defer
+    ></script>
+  </head>
+  <header class="header">
+    <img
+      class="header__img"
+      src="{{ url_for('static', filename='Logo/echoeyeslogo1.png') }}"
+      alt="EchoEyes Logo"
+    />
+  </header>
+  <div class="main">
+    <form
+      class="form-inline"
+      enctype="multipart/form-data"
+      action="/generate_caption"
+      method="POST"
+    >
+      <label><b>Put Your Image: &nbsp;&nbsp; </b></label>
+      <input type="file" class="form-control" name="image" />
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <p id="caption"></p>
+    <audio id="caption-audio" controls style="display: none">
+      <source src="" type="audio/mpeg" />
+    </audio>
+    <img id="image" />
+  </div>
+  <footer class="footer">
+    <p class="footer__text">Designed and built by @ Yi Ching Wang 2023</p>
+  </footer>
+
+  <body>
+    <!-- JavaScript libraries -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

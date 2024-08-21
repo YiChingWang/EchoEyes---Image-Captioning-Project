@@ -30,11 +30,6 @@ Watch the EchoEyes Demo Video
 1. **Download Flick8r**: [https://www.kaggle.com/datasets/adityajn105/flickr8k](#)
 2. **Download TAR File**: [https://drive.google.com/drive/folders/1NFYLXv09IlGnnsaaV6-\_rIZINqQzVOKk?usp=sharing](#)
 
-### Prerequisites
-
-1. **Download Flick8r**: [https://www.kaggle.com/datasets/adityajn105/flickr8k](#)
-2. **Download TAR File**: [https://drive.google.com/drive/folders/1NFYLXv09IlGnnsaaV6-\_rIZINqQzVOKk?usp=sharing](#)
-
 ### Configuration
 
 After downloading the Flick8r dataset and TAR file, you need to update the paths in your code to ensure everything runs smoothly.
@@ -51,7 +46,6 @@ After downloading the Flick8r dataset and TAR file, you need to update the paths
 
    ```python
    flickr8k_path = "/Users/olliesmacbook/Desktop/echoeyes pyhton  final project/EchoEyes/flask/flickr8k/Images", "/Users/olliesmacbook/Desktop/echoeyes pyhton final project/EchoEyes/flask/flickr8k/captions.txt", # Update this path
-
    ```
 
 2. **Update TAR File Path:**
@@ -124,19 +118,9 @@ This will return your terminal to the global Python environment.
 
    ```bash
    git clone git@github.com:YiChingWang/EchoEyes----Image-Captioning-Project.git
-   cd EchoEyes
    ```
 
-2. **Install Dependencies**
-
-   Make sure to install the required packages listed in
-   requirements.txt:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Set Up the API**
+2. **Set Up the API**
    Obtain API keys for image captioning and TTS services.
    Configure the API keys in the config.py file or environment
    variables as specified in the documentation.

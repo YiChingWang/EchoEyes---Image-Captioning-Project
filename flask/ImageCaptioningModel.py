@@ -3,7 +3,7 @@ from PIL import Image
 from torchvision.transforms import Compose, Resize, ToTensor, Normalize
 from model import CNNtoRNN
 
-//封裝Model的地方
+#封裝Model的地方
 class ImageCaptioningModel:
     def __init__(self, model_path, vocab, transform=None):
         self.vocab = vocab

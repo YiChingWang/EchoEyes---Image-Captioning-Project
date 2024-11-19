@@ -1,4 +1,3 @@
-// JavaScript code to update the generated caption and display the uploaded image
 document.querySelector("form").addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = new FormData(this);
@@ -6,18 +5,29 @@ document.querySelector("form").addEventListener("submit", function (e) {
     method: "POST",
     body: formData,
   })
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json();
+    })
     .then((data) => {
-      //console.log(data); //打印响应数据以进行调试
       document.getElementById("caption").textContent = data.caption;
 
-      // 更新音頻元素的src屬性並顯示播放器
       var audioPlayer = document.getElementById("caption-audio");
       audioPlayer.src = data.audio_path;
       audioPlayer.style.display = "block";
       audioPlayer.load();
+
       document.getElementById("image").src = URL.createObjectURL(
         formData.get("image")
       );
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+      document.getElementById("caption").textContent =
+        "An error occurred while processing your request. Please try again.";
+      document.getElementById("caption-audio").style.display = "none";
+      document.getElementById("image").src = ""; 
     });
 });

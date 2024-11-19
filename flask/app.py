@@ -4,6 +4,8 @@ import torchvision.transforms as transforms
 from google.cloud import texttospeech
 from flask import Flask, jsonify, render_template, request, url_for
 import os
+
+#啟動flask的地方
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/Users/olliesmacbook/Desktop/Project/Echoeyes -- image captioning project/birdy-405203-02c6cb586696.json"
 
 app = Flask(__name__)

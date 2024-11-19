@@ -14,7 +14,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     .then((data) => {
       document.getElementById("caption").textContent = data.caption;
 
-      var audioPlayer = document.getElementById("caption-audio");
+      let audioPlayer = document.getElementById("caption-audio");
       audioPlayer.src = data.audio_path;
       audioPlayer.style.display = "block";
       audioPlayer.load();
